@@ -1,0 +1,23 @@
+prefix: "&bEssentialRX&7 » "
+lang: "messages.yml"
+
+teleport:
+  tpa_expire_seconds: 60
+  back_on_death: true
+
+homes:
+  max_default: 3
+  limit_permission_format: "essentialrx.homes.%d"
+
+warps:
+  use_permission: true
+  warp_permission_format: "essentialrx.warp.%s"
+
+economy:
+  enabled: true
+
+moderation:
+  mute_chat_block: true
+
+messages:
+  use_actionbar: false

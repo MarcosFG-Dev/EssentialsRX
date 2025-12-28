@@ -1,0 +1,187 @@
+name: EssentialRX
+main: br.com.essentialrx.EssentialRXPlugin
+version: 1.0.0
+author: Marcos
+depend: []
+softdepend: [Vault, LuckPerms]
+description: EssentialRX - Essentials-like plugin for 1.8.9 with Vault & LuckPerms support.
+
+commands:
+  essentialrx:
+    description: EssentialRX info / reload
+    usage: /essentialrx [reload]
+  spawn:
+    description: Teleport to spawn
+    usage: /spawn
+  setspawn:
+    description: Set spawn location
+    usage: /setspawn
+  tp:
+    description: Teleport to player
+    usage: /tp <player>
+  tphere:
+    description: Teleport player to you
+    usage: /tphere <player>
+  tpall:
+    description: Teleport all online players to you
+    usage: /tpall
+  tpa:
+    description: Request teleport to player
+    usage: /tpa <player>
+  tpaccept:
+    description: Accept teleport request
+    usage: /tpaccept
+  tpdeny:
+    description: Deny teleport request
+    usage: /tpdeny
+  back:
+    description: Teleport to last location
+    usage: /back
+  home:
+    description: Teleport to home
+    usage: /home [name]
+  sethome:
+    description: Set home
+    usage: /sethome [name]
+  delhome:
+    description: Delete home
+    usage: /delhome [name]
+  warp:
+    description: Teleport to warp
+    usage: /warp <name>
+  setwarp:
+    description: Set warp
+    usage: /setwarp <name>
+  delwarp:
+    description: Delete warp
+    usage: /delwarp <name>
+  heal:
+    description: Heal yourself or another
+    usage: /heal [player]
+  feed:
+    description: Feed yourself or another
+    usage: /feed [player]
+  fly:
+    description: Toggle fly
+    usage: /fly [player]
+  gm:
+    description: Change gamemode
+    usage: /gm <0|1|2|3> [player]
+  gms:
+    description: Survival mode
+    usage: /gms [player]
+  gmc:
+    description: Creative mode
+    usage: /gmc [player]
+  gma:
+    description: Adventure mode
+    usage: /gma [player]
+  clearinventory:
+    description: Clear inventory
+    aliases: [ci, clearinv]
+    usage: /clearinventory [player]
+  invsee:
+    description: View inventory
+    usage: /invsee <player>
+  enderchest:
+    description: Open enderchest
+    aliases: [ec]
+    usage: /enderchest [player]
+  workbench:
+    description: Open crafting table
+    aliases: [wb, craft]
+    usage: /workbench
+  anvil:
+    description: Open anvil
+    usage: /anvil
+  trash:
+    description: Open trash inventory
+    usage: /trash
+  hat:
+    description: Set hat item
+    usage: /hat
+  repair:
+    description: Repair item
+    usage: /repair [all]
+  kill:
+    description: Kill yourself or another
+    usage: /kill [player]
+  msg:
+    description: Private message
+    aliases: [tell, w, m]
+    usage: /msg <player> <message>
+  reply:
+    description: Reply to last message
+    aliases: [r]
+    usage: /reply <message>
+  broadcast:
+    description: Broadcast message
+    aliases: [bc]
+    usage: /broadcast <message>
+  seen:
+    description: See last seen
+    usage: /seen <player>
+  bal:
+    description: Balance
+    aliases: [money]
+    usage: /bal [player]
+  pay:
+    description: Pay player
+    usage: /pay <player> <amount>
+  baltop:
+    description: Balance top
+    usage: /baltop
+  eco:
+    description: Manage economy
+    usage: /eco <give|take|set> <player> <amount>
+    permission: essentialrx.eco
+  kick:
+    description: Kick player
+    usage: /kick <player> [reason]
+  ban:
+    description: Ban player
+    usage: /ban <player> [reason]
+  tempban:
+    description: Temporarily ban player
+    usage: /tempban <player> <time> [reason]
+  unban:
+    description: Unban player
+    usage: /unban <player>
+  mute:
+    description: Mute player
+    usage: /mute <player> [time]
+  unmute:
+    description: Unmute player
+    usage: /unmute <player>
+  vanish:
+    description: Toggle vanish
+    aliases: [v]
+    usage: /vanish [player]
+
+permissions:
+  essentialrx.*:
+    description: All EssentialRX permissions
+    default: op
+    children:
+      essentialrx.admin: true
+      essentialrx.user: true
+
+  essentialrx.user:
+    default: true
+    children:
+      essentialrx.spawn: true
+      essentialrx.home: true
+      essentialrx.sethome: true
+      essentialrx.delhome: true
+      essentialrx.warp: true
+      essentialrx.back: true
+      essentialrx.tpa: true
+      essentialrx.tpaccept: true
+      essentialrx.tpdeny: true
+      essentialrx.msg: true
+      essentialrx.reply: true
+      essentialrx.bal: true
+      essentialrx.pay: true
+
+  essentialrx.admin:
+    default: op
